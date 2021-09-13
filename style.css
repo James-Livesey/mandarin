@@ -17,6 +17,14 @@ body {
     color: var(--foreground);
 }
 
+header a {
+    color: inherit;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
 main {
     display: flex;
     min-height: calc(100vh - 10rem);

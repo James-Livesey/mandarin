@@ -24,11 +24,11 @@ Of course, when we're asking what somebody's name is, we're referring to whoever
 Enough analysing what "what is your name?" means! Let's actually respond:
 
 <div class="phrase">
-    <strong>我叫James！</strong> <span>My name is James!</span> <span>wǒ · jiào · James</span>
+    <strong>我叫James！</strong> <span>My name is James!</span> <span>wǒ · jiào · James!</span>
 </div>
 
 As you'll see in a moment when we move onto pronouns, <ruby>你 <rt>wǒ</rt></ruby> means "I", and as we've already seen, 叫 essentially means "am called". So, putting it all together, you get "I am called \_\_\_\_".
 
-If — like me — you have a name that's spelt with Latin characters, then usually you'd just put the Latin name there. Alternatively, you can put your name into [Google Translate](https://translate.google.com/?sl=en&tl=zh-CN&op=translate) and find out what the equivalent would be in Chinese. So, in that case, call me <abbr title="[zhān mǔ shì] James">詹姆士</abbr> from now on!
+If — like me — you have a name that's spelt with Latin characters, then usually you'd just put the Latin name there. Alternatively, you can put your name into <a href="https://translate.google.com/?sl=en&tl=zh-CN&op=translate" target="_blank">Google Translate</a> and find out what the equivalent would be in Chinese. So, in that case, call me <abbr title="[zhān mǔ shì] James">詹姆士</abbr> from now on!
 
 <a href="basics/pronouns.md" class="next">Pronouns</a>

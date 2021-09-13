@@ -33,7 +33,7 @@ A pronoun is a word that directly references something. In English, we have "I";
     <strong>她们</strong> <span>they (female only)</span> <span>tā men</span>
 </div>
 
-You'll notice that <ruby>他 <rt>tā</rt></ruby> and <ruby>她 <rt>tā</rt></ruby> sound the same. That generally is because unlike in English, where we have two separate words for "he" and "she", Chinese only differs the words by modifying one of the radicals to be 女 (meaning "female") for 她, from 亻 (meaning "male").
+You'll notice that <ruby>他 <rt>tā</rt></ruby> and <ruby>她 <rt>tā</rt></ruby> sound the same. That generally is because unlike in English, where we have two separate words for "he" and "she", Chinese only differs the words by modifying one of the radicals to be <abbr title="[nǚ]">女</abbr> (meaning "female") for 她, from <abbr title="[rén]">亻</abbr> (which doesn't have a strong meaning).
 
 That'll be enough to get by for now. Let's move on!
 
