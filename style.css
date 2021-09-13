@@ -1,0 +1,140 @@
+:root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --light: #dddddd;
+    --link: #2167e8;
+    --linkUnderline: #c0d2f2;
+}
+
+* {
+    font-family: "Overpass Mono", monospace;
+}
+
+body {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+main {
+    display: flex;
+    min-height: calc(100vh - 10rem);
+}
+
+main nav {
+    flex-shrink: 0;
+    width: 15rem;
+    margin-right: 3rem;
+}
+
+main nav details {
+    margin-bottom: 1rem;
+}
+
+main nav details summary {
+    cursor: pointer;
+}
+
+main nav ul {
+    margin: 0;
+    padding-inline-start: 1rem;
+    list-style: none;
+}
+
+main article {
+    flex-grow: 1;
+    padding-bottom: 2rem;
+}
+
+main article > *:first-child {
+    margin-top: 0;
+}
+
+main article > *:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--linkUnderline);
+    text-decoration-thickness: 0.2rem;
+}
+
+a.next {
+    display: block;
+    width: 15rem;
+    height: 3rem;
+    padding: 1rem;
+    background-color: var(--link);
+    color: var(--background);
+}
+
+a.next::after {
+    display: inline-block;
+    margin-inline-start: 0.5rem;
+    content: "🢒";
+}
+
+abbr {
+    background-color: var(--light);
+    text-decoration: none;
+    cursor: help;
+}
+
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.split > * {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.phrase {
+    display: grid;
+    width: fit-content;
+    width: -moz-fit-content;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "char english"
+        "char pinyin"
+    ;
+}
+
+.phrase strong {
+    margin-inline-end: 1rem;
+    grid-area: char;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.phrase span:first-child {
+    grid-area: english;
+}
+
+.phrase span:last-child {
+    grid-area: pinyin;
+}
+
+.phrase span:last-child::before {
+    opacity: 0.4;
+    content: "[";
+}
+
+.phrase span:last-child::after {
+    opacity: 0.4;
+    content: "]";
+}
