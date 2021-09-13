@@ -63,6 +63,11 @@ main article > *:last-child {
     margin-bottom: 0;
 }
 
+main article h1, main article h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+}
+
 a {
     color: var(--link);
     text-decoration: none;
