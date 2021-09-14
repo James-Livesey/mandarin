@@ -27,7 +27,7 @@ Enough analysing what "what is your name?" means! Let's actually respond:
     <strong>我叫James！</strong> <span>My name is James!</span> <span>wǒ · jiào · James!</span>
 </div>
 
-As you'll see in a moment when we move onto pronouns, <ruby>你 <rt>wǒ</rt></ruby> means "I", and as we've already seen, 叫 essentially means "am called". So, putting it all together, you get "I am called \_\_\_\_".
+As you'll see in a moment when we move onto pronouns, <ruby>你 <rt>wǒ</rt></ruby> means "I", and as we've already seen with 你叫什么名字？, 叫 essentially means "am called". So, putting it all together, you get "I am called \_\_\_\_".
 
 If — like me — you have a name that's spelt with Latin characters, then usually you'd just put the Latin name there. Alternatively, you can put your name into <a href="https://translate.google.com/?sl=en&tl=zh-CN&op=translate" target="_blank">Google Translate</a> and find out what the equivalent would be in Chinese. So, in that case, call me <abbr title="[zhān mǔ shì] James">詹姆士</abbr> from now on!
 
