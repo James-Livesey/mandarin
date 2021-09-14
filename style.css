@@ -97,7 +97,8 @@ body.showNav a.toggleNav::before {
 a.next {
     display: block;
     width: 15rem;
-    height: 3rem;
+    max-width: 60%;
+    min-height: 3rem;
     padding: 1rem;
     background-color: var(--link);
     color: var(--background);
