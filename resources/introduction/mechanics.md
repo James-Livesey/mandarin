@@ -3,6 +3,11 @@ Unlike English, Mandarin uses characters to form sentences. A word consists of o
 
 This is known as a language with **analytic phonics** — where each phoneme has its own meaning, instead of in English: "en" has no meaning, and neither do "gl" and "ish". Synthetic-phoneme languages generally 'smush' sounds together to modify the meaning of a word, often by switching out the world prefixes or suffixes of the word. Analytic-phoneme languages, on the other hand, don't really. It's a bit of a sliding scale, though.
 
+## Writing Mandarin
+Mandarin is certainly different from English in both the way it sounds and the way it is written. Characters are formed using **radicals**, which all have their own 'pseudomeanings' that combine into a coherent meaning. For example, <ruby>大 <rt>dà</rt></ruby>, which means "big", can be seen in other characters such as <ruby>太 <rt>tài</rt></ruby> ("too (much)") and <ruby>天 <rt>tiān</rt></ruby> ("day" or "sky"). So, if you don't know a character, you may be able to infer it from its looks.
+
+Chinese characters are almost always drawn from top-left to bottom-right.
+
 ## Pinyin
 Up until the 1950s, there was no easy way to express the pronunciation of Mandarin characters in writing. Pinyin (拼音) was introduced as a way of writing Chinese characters phonetically, much like how in English, we also write can words somewhat phonetically (fuh-neh-tuh-klee).
 
