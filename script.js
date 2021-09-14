@@ -38,6 +38,10 @@ function renderResource(resource) {
     });
 }
 
+function toggleNav() {
+    document.querySelector("body").classList.toggle("showNav");
+}
+
 window.addEventListener("load", function() {
     if (parameter("page") != null) {
         renderResource(parameter("page"));
@@ -45,5 +49,11 @@ window.addEventListener("load", function() {
         renderResource("introduction/welcome.md");
     }
 
-    document.querySelectorAll("main nav a").forEach(setLink);
+    document.querySelectorAll("main nav a").forEach(function(element) {
+        if (element.getAttribute("href") == parameter("page")) {
+            element.style.fontWeight = "bold";
+        }
+
+        setLink(element);
+    });
 });

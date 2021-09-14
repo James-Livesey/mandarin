@@ -79,6 +79,21 @@ a:hover {
     text-decoration-thickness: 0.2rem;
 }
 
+a.toggleNav {
+    display: none;
+    margin-bottom: 1rem;
+}
+
+a.toggleNav::before {
+    display: inline-block;
+    margin-inline-end: 0.3rem;
+    content: "⯆";
+}
+
+body.showNav a.toggleNav::before {
+    content: "⯅";
+}
+
 a.next {
     display: block;
     width: 15rem;
@@ -150,4 +165,22 @@ abbr {
 .phrase span:last-child::after {
     opacity: 0.4;
     content: "]";
+}
+
+@media (max-width: 800px) {
+    a.toggleNav {
+        display: block;
+    }
+
+    main nav {
+        display: none;
+    }
+
+    body.showNav main nav {
+        display: block;
+    }
+
+    body.showNav main article {
+        display: none;
+    }
 }
