@@ -1,13 +1,18 @@
+@import url("quiz.css");
+
 :root {
     --background: #ffffff;
     --foreground: #000000;
     --light: #dddddd;
     --link: #2167e8;
     --linkUnderline: #c0d2f2;
+    --correct: #0ec53c;
+    --incorrect: #c5300e;
 }
 
 * {
     font-family: "Overpass Mono", monospace;
+    box-sizing: border-box;
 }
 
 body {
@@ -96,9 +101,9 @@ body.showNav a.toggleNav::before {
 
 a.next {
     display: block;
-    width: 15rem;
+    width: 17rem;
     max-width: 60%;
-    min-height: 3rem;
+    min-height: 5rem;
     padding: 1rem;
     background-color: var(--link);
     color: var(--background);
@@ -114,6 +119,20 @@ abbr {
     background-color: var(--light);
     text-decoration: none;
     cursor: help;
+}
+
+button {
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: var(--link);
+    color: var(--background);
+    border: none;
+    font-size: 1rem;
+}
+
+button + button {
+    margin-inline-start: 0.5rem;
 }
 
 .split {

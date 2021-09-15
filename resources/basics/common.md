@@ -31,4 +31,22 @@ As you'll see in a moment when we move onto pronouns, <ruby>你 <rt>wǒ</rt></ru
 
 If — like me — you have a name that's spelt with Latin characters, then usually you'd just put the Latin name there. Alternatively, you can put your name into <a href="https://translate.google.com/?sl=en&tl=zh-CN&op=translate" target="_blank">Google Translate</a> and find out what the equivalent would be in Chinese. So, in that case, call me <abbr title="[zhān mǔ shì] James">詹姆士</abbr> from now on!
 
+### Quiz
+
+<quiz-set>
+    <quiz-page type="arrange">
+        <quiz-question question="你叫什么名字？" after="我叫梓豪。">
+            <quiz-block>我</quiz-block>
+            <quiz-block>叫</quiz-block>
+            <quiz-block>梓豪</quiz-block>
+        </quiz-question>
+        <quiz-question question="你好！" after="你叫什么名字？">
+            <quiz-block>你</quiz-block>
+            <quiz-block>叫</quiz-block>
+            <quiz-block>什么</quiz-block>
+            <quiz-block>名字</quiz-block>
+        </quiz-question>
+    </quiz-page>
+</quiz-set>
+
 <a href="basics/pronouns.md" class="next">Pronouns</a>

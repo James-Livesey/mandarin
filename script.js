@@ -1,12 +1,16 @@
-function parameter(parameter) {
+import * as quiz from "./quiz.js";
+
+window.quiz = quiz;
+
+export function parameter(parameter) {
     return decodeURIComponent((new RegExp("[?|&]" + parameter + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }
 
-function getResourceLink(page) {
+export function getResourceLink(page) {
     return `index.html?page=${encodeURIComponent(page)}`;
 }
 
-function setLink(element) {
+export function setLink(element) {
     var url = element.getAttribute("href");
 
     if (url.startsWith("http://") || url.startsWith("https://")) {
@@ -16,17 +20,25 @@ function setLink(element) {
     element.setAttribute("href", `index.html?page=${encodeURIComponent(url)}`);
 }
 
-function parseHtml(html) {
+export function parseHtml(html) {
     var rootElement = document.createElement("div");
 
     rootElement.innerHTML = html;
 
     rootElement.querySelectorAll("a").forEach(setLink);
 
-    return rootElement.innerHTML;
+    rootElement.querySelectorAll("quiz-set").forEach(function(setElement) {
+        var set = quiz.QuizSet.parse(setElement);
+
+        set.render();
+
+        setElement.replaceWith(set.element);
+    });
+
+    return rootElement;
 }
 
-function renderResource(resource) {
+export function renderResource(resource) {
     return fetch(`resources/${resource}`).then(function(response) {
         return response.text();
     }).then(function(data) {
@@ -34,11 +46,11 @@ function renderResource(resource) {
             headingLevelStart: 2
         });
 
-        document.querySelector("article").innerHTML = parseHtml(converter.makeHtml(data));
+        document.querySelector("article").append(parseHtml(converter.makeHtml(data)));
     });
 }
 
-function toggleNav() {
+export function toggleNav() {
     document.querySelector("body").classList.toggle("showNav");
 }
 
@@ -56,4 +68,6 @@ window.addEventListener("load", function() {
 
         setLink(element);
     });
+
+    document.querySelector(".toggleNav").addEventListener("click", toggleNav);
 });
