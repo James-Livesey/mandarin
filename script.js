@@ -62,7 +62,7 @@ window.addEventListener("load", function() {
     }
 
     document.querySelectorAll("main nav a").forEach(function(element) {
-        if (element.getAttribute("href") == parameter("page")) {
+        if (element.getAttribute("href") == (parameter("page") || "introduction/welcome.md")) {
             element.style.fontWeight = "bold";
         }
 
