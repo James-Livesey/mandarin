@@ -1,3 +1,11 @@
+function shuffle(items) {
+    return items
+        .map((value) => ({value, position: Math.random()}))
+        .sort((a, b) => a.position - b.position)
+        .map((item) => item.value)
+    ;
+}
+
 export class QuizPart {
     constructor() {
         this.parent = null;
@@ -139,6 +147,8 @@ export class QuizArrangePage extends QuizPage {
             instance.questions.push(question);
         });
 
+        instance.questions = shuffle(instance.questions);
+
         return instance;
     }
 
@@ -157,7 +167,7 @@ export class QuizArrangePage extends QuizPage {
         if (this.currentQuestion > 0) {
             var previousButton = document.createElement("button");
 
-            previousButton.innerText = "Previous";
+            previousButton.innerText = "🢐 Previous";
 
             previousButton.addEventListener("click", function() {
                 thisScope.currentQuestion--;
@@ -171,7 +181,7 @@ export class QuizArrangePage extends QuizPage {
         if (this.currentQuestion < this.questions.length - 1) {
             var nextButton = document.createElement("button");
 
-            nextButton.innerText = "Next";
+            nextButton.innerText = "Next 🢒";
 
             nextButton.addEventListener("click", function() {
                 thisScope.currentQuestion++;
@@ -239,11 +249,7 @@ export class QuizArrangeQuestion extends QuizQuestion {
             instance.containerBlocks.push(block);
         });
 
-        instance.containerBlocks = instance.containerBlocks
-            .map((value) => ({value, position: Math.random()}))
-            .sort((a, b) => a.position - b.position)
-            .map((item) => item.value)
-        ;
+        instance.containerBlocks = shuffle(instance.containerBlocks);
 
         return instance;
     }
