@@ -292,7 +292,7 @@ export class QuizArrangeQuestion extends QuizQuestion {
         answerContainer.classList.add("quizArrangeAnswerContainer");
         blocksContainer.classList.add("quizArrangeBlocksContainer");
 
-        questionText.textContent = this.question;
+        questionText.innerHTML = this.question;
 
         this.containerBlocks.forEach(function(block, i) {
             block.render();
@@ -460,7 +460,7 @@ export class QuizBlock extends QuizPart {
 
 export class QuizArrangeBlock extends QuizBlock {
     static parse(element) {
-        var instance = new this(element.textContent);
+        var instance = new this(element.innerHTML);
 
         return instance;
     }

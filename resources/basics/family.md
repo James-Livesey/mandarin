@@ -32,10 +32,10 @@ They're not too hard to remember — they're pretty much modelled around the fir
     </div>
 </div>
 
-To refer to a family member, you say <ruby>我 <rt>wǒ</rt></ruby>, followed by the family member. For example, <ruby>我妈妈 <rt>wǒ mā mā</rt></ruby> means "my mother", and <ruby>我哥哥 <rt>wǒ gē gē</rt></ruby> means "my older brother".
+To refer to a family member, you say <ruby>我 <rt>wǒ</rt></ruby>, followed by the family member. For example, <ruby>我 <rt>wǒ</rt> 妈 <rt>mā</rt> 妈 <rt>mā</rt></ruby> means "my mother", and <ruby>我 <rt>wǒ</rt> 哥 <rt>gē</rt> 哥 <rt>gē</rt></ruby> means "my older brother".
 
 ## "I have..."
-To say that you have three older sisters, you'd write <ruby>我有三个姐姐 <rt>wǒ yǒu sān gè jiě jiě</rt></ruby>. 有 means "have", and goes between the subject and the object (much like in English). 个 kinda means "of", and is known as a <strong>measure word</strong> — which can be different, depending on the noun we're talking about. I'd say that 个 is the most common when talking about counting people.
+To say that you have three older sisters, you'd write <ruby>我 <rt>wǒ</rt> 有 <rt>yǒu</rt> 三 <rt>sān</rt> 个 <rt>gè</rt> 姐 <rt>jiě</rt> 姐 <rt>jiě</rt></ruby>. 有 means "have", and goes between the subject and the object (much like in English). 个 kinda means "of", and is known as a <strong>measure word</strong> — which can be different, depending on the noun we're talking about. I'd say that 个 is the most common when talking about counting people.
 
 > **Exception:** When talking about two of something, you must use <ruby>两 <rt>liǎng</rt></ruby> instead of 二.
 
@@ -69,4 +69,43 @@ I'll introduce you to a few words for pets — we're not going to go through too
 
 Some of them are not too hard. 猫 and 狗 both appear to have tail-like radicals in their characters (犭) which differentiate them from the rest; 鸟 looks like a bird; and 鱼 looks like a fish bowl. The others... Yeah, I'll leave it up to your imagination to think about what relation those characters have to rabbits and snakes!
 
-> **Note:** The measure word for animals is <ruby>只 <rt>zhī</rt></ruby>. So, to say "four cats", you'd write <ruby>四只猫 <rt>sì zhī māo</rt></ruby>.
+> **Note:** The measure word for animals is <ruby>只 <rt>zhī</rt></ruby>. So, to say "four cats", you'd write <ruby>四 <rt>sì</rt> 只 <rt>zhī</rt> 猫 <rt>māo</rt></ruby>.
+
+### Saying you have no pets
+If you have no pets, then you can say:
+
+<div class="phrase">
+    <strong>我没有宠物。</strong> <span>I have no pets.</span> <span>wǒ · méi yǒu · chǒng wù</span>
+</div>
+
+<ruby>没 <rt>méi</rt> 有 <rt>yǒu</rt></ruby> means "don't have", and <ruby>宠 <rt>chǒng</rt> 物 <rt>wù</rt></ruby> means "pets".
+
+### Quiz
+
+<quiz-set>
+    <quiz-page type="arrange">
+        <quiz-question question="你妹妹叫什么名字？" after="我妹妹叫梓涵。">
+            <quiz-block>我</quiz-block>
+            <quiz-block>妹妹</quiz-block>
+            <quiz-block>叫</quiz-block>
+            <quiz-block>梓涵</quiz-block>
+        </quiz-question>
+        <quiz-question question="你有<ruby>多 <rt>duō</rt> 少 <rt>shǎo</rt></ruby>只猫？" after="我有一只猫。">
+            <quiz-block>我</quiz-block>
+            <quiz-block>有</quiz-block>
+            <quiz-block>一</quiz-block>
+            <quiz-block>只</quiz-block>
+            <quiz-block>猫</quiz-block>
+        </quiz-question>
+        <quiz-question question="你有宠物吗？" after="我没有只宠物。">
+            <quiz-block>我</quiz-block>
+            <quiz-block>没有</quiz-block>
+            <quiz-block>只</quiz-block>
+            <quiz-block>宠物</quiz-block>
+        </quiz-question>
+    </quiz-page>
+    <quiz-page type="pinyin">
+        <quiz-question question="Transcribe: 我有两个弟弟。">wǒ · yǒu · liǎng · gè · dì dì.</quiz-question>
+        <quiz-question question="Transcribe: 这是我的兔子。">zhè · shì · wǒ · de · tù zǐ.</quiz-question>
+    </quiz-page>
+</quiz-set>
