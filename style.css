@@ -135,6 +135,18 @@ button + button {
     margin-inline-start: 0.5rem;
 }
 
+input {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: var(--light);
+    color: var(--foreground);
+    border: none;
+    font-size: 1rem;
+}
+
 .split {
     display: flex;
     flex-wrap: wrap;

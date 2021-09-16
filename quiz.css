@@ -40,6 +40,10 @@
     background-color: var(--light);
 }
 
+.quizPage input {
+    background-color: var(--background);
+}
+
 .quizQuestion p:first-child {
     margin-top: 0;
 }

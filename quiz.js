@@ -30,6 +30,10 @@ export class QuizPart {
         oldElement.replaceWith(this.element);
 
         classes.split(" ").forEach(function(className) {
+            if (className == "") {
+                return;
+            }
+
             thisScope.element.classList.add(className);
         });
     }
@@ -102,6 +106,7 @@ export class QuizPage extends QuizPart {
     static parseSpecialisedPage(element) {
         switch (element.getAttribute("type")) {
             case "arrange": return QuizArrangePage.parse(element);
+            case "pinyin": return QuizPinyinPage.parse(element);
         }
 
         throw new TypeError("An improper specialised page type was given");
@@ -112,7 +117,7 @@ export class QuizPage extends QuizPart {
     }
 }
 
-export class QuizArrangePage extends QuizPage {
+export class QuizQuestionPage extends QuizPage {
     constructor() {
         super();
 
@@ -134,22 +139,6 @@ export class QuizArrangePage extends QuizPage {
         });
 
         return finalResult;
-    }
-
-    static parse(element) {
-        var instance = new this();
-
-        element.querySelectorAll("quiz-question").forEach(function(questionElement) {
-            var question = QuizArrangeQuestion.parse(questionElement);
-
-            question.parent = instance;
-
-            instance.questions.push(question);
-        });
-
-        instance.questions = shuffle(instance.questions);
-
-        return instance;
     }
 
     render() {
@@ -193,6 +182,42 @@ export class QuizArrangePage extends QuizPage {
         }
 
         this.element.append(navigationButtonsContainer);
+    }
+}
+
+export class QuizArrangePage extends QuizQuestionPage {
+    static parse(element) {
+        var instance = new this();
+
+        element.querySelectorAll("quiz-question").forEach(function(questionElement) {
+            var question = QuizArrangeQuestion.parse(questionElement);
+
+            question.parent = instance;
+
+            instance.questions.push(question);
+        });
+
+        instance.questions = shuffle(instance.questions);
+
+        return instance;
+    }
+}
+
+export class QuizPinyinPage extends QuizQuestionPage {
+    static parse(element) {
+        var instance = new this();
+
+        element.querySelectorAll("quiz-question").forEach(function(questionElement) {
+            var question = QuizPinyinQuestion.parse(questionElement);
+
+            question.parent = instance;
+
+            instance.questions.push(question);
+        });
+
+        instance.questions = shuffle(instance.questions);
+
+        return instance;
     }
 }
 
@@ -357,6 +382,64 @@ export class QuizArrangeQuestion extends QuizQuestion {
         }
 
         this.element.append(questionText, answerContainer, blocksContainer, resultText);
+    }
+}
+
+export class QuizPinyinQuestion extends QuizQuestion {
+    constructor(question, answer) {
+        super(question);
+
+        this.answer = answer;
+        this.givenAnswer = "";
+    }
+
+    static parse(element) {
+        return new this(element.getAttribute("question"), element.textContent);
+    }
+
+    static normalise(pinyin) {
+        return pinyin.normalize("NFD").replace(/[\u0300-\u036f\s·?!.]/g, "").toLocaleLowerCase().trim();
+    }
+
+    get correct() {
+        if (this.constructor.normalise(this.givenAnswer) == this.constructor.normalise(this.answer)) {
+            return true;
+        }
+
+        return null;
+    }
+
+    render() {
+        var thisScope = this;
+
+        super.render();
+
+        var questionText = document.createElement("p");
+        var answerInput = document.createElement("input");
+        var resultText = document.createElement("p");
+
+        questionText.textContent = this.question;
+        answerInput.placeholder = "Type the answer using pinyin";
+
+        answerInput.addEventListener("keyup", function() {
+            thisScope.givenAnswer = answerInput.value;
+
+            if (thisScope.correct == true) {
+                thisScope.root.render();
+            }
+        });
+
+        if (this.correct == true) {
+            answerInput.value = thisScope.answer;
+            answerInput.disabled = true;
+            resultText.innerText = "Correct; well done!";
+        } else if (this.correct == false) {
+            resultText.innerText = "Not quite — take another look and try again. Make sure your answer's in pinyin.";
+        } else {
+            resultText.innerText = "Read the question and then type in the answer in pinyin. You don't need to write the diacritics.";
+        }
+
+        this.element.append(questionText, answerInput, resultText);
     }
 }
 
