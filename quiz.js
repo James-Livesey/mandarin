@@ -398,7 +398,7 @@ export class QuizPinyinQuestion extends QuizQuestion {
     }
 
     static normalise(pinyin) {
-        return pinyin.normalize("NFD").replace(/[\u0300-\u036f\s·?!.]/g, "").toLocaleLowerCase().trim();
+        return pinyin.normalize("NFD").replace(/[\u0300-\u036f\s·?!.,]/g, "").toLocaleLowerCase();
     }
 
     get correct() {
