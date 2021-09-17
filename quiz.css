@@ -140,6 +140,7 @@
 .quizMatchBlocksContainer .quizBlock {
     display: block;
     width: fit-content;
+    width: -moz-fit-content;
     margin-bottom: 1rem;
 }
 
