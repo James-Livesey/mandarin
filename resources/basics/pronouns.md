@@ -60,4 +60,24 @@ Let's say that somebody was about to grab your apple (<ruby>苹果 <rt>píng gu�
 
 If you've guessed/paid attention to the vocabulary, it means "That's my apple!".
 
+### Quiz
+<quiz-set>
+    <quiz-page type="pinyin">
+        <quiz-question question="Transcribe: 我们">wǒ · men</quiz-question>
+        <quiz-question question="Transcribe: 她们">tā · men</quiz-question>
+        <quiz-question question="Transcribe: 你">nǐ</quiz-question>
+        <quiz-question question="Transcribe: 他">tā</quiz-question>
+    </quiz-page>
+    <quiz-page type="match">
+        <quiz-block answer="I">我</quiz-block>
+        <quiz-block answer="you (singular)">你</quiz-block>
+        <quiz-block answer="he, it, they">他</quiz-block>
+        <quiz-block answer="she">她</quiz-block>
+        <quiz-block answer="we">我们</quiz-block>
+        <quiz-block answer="you (plural)">你们</quiz-block>
+        <quiz-block answer="they (male/mixed)">他们</quiz-block>
+        <quiz-block answer="they (female only)">她们</quiz-block>
+    </quiz-page>
+</quiz-set>
+
 <a href="basics/family.md" class="next">Family</a>

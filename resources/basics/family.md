@@ -108,4 +108,20 @@ If you have no pets, then you can say:
         <quiz-question question="Transcribe: 我有两个弟弟。">wǒ · yǒu · liǎng · gè · dì dì.</quiz-question>
         <quiz-question question="Transcribe: 这是我的兔子。">zhè · shì · wǒ · de · tù zǐ.</quiz-question>
     </quiz-page>
+    <quiz-page type="match">
+        <quiz-block answer="mum">妈妈</quiz-block>
+        <quiz-block answer="dad">爸爸</quiz-block>
+        <quiz-block answer="younger brother">弟弟</quiz-block>
+        <quiz-block answer="younger sister">妹妹</quiz-block>
+        <quiz-block answer="older brother">哥哥</quiz-block>
+        <quiz-block answer="older sister">姐姐</quiz-block>
+    </quiz-page>
+    <quiz-page type="match">
+        <quiz-block answer="cat">猫</quiz-block>
+        <quiz-block answer="dog">狗</quiz-block>
+        <quiz-block answer="rabbit">兔子</quiz-block>
+        <quiz-block answer="fish">鱼</quiz-block>
+        <quiz-block answer="bird">鸟</quiz-block>
+        <quiz-block answer="snake">蛇</quiz-block>
+    </quiz-page>
 </quiz-set>

@@ -93,7 +93,6 @@
 
 .quizMatchBlocksContainer {
     flex-grow: 1;
-    flex-basis: 0;
     margin-inline-end: 0.5rem;
     padding: 0.5rem;
     background-color: var(--background);
@@ -101,7 +100,6 @@
 
 .quizMatchAnswersContainer {
     flex-grow: 1;
-    flex-basis: 0;
     margin-inline-start: 0.5rem;
 }
 

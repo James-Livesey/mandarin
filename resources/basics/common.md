@@ -69,6 +69,13 @@ If — like me — you have a name that's spelt with Latin characters, then usua
         <quiz-question question="Transcribe: 我很好，谢谢！">wǒ · hěn · hǎo, · xiè xiè!</quiz-question>
         <quiz-question question="Transcribe: 你叫什么名字？">nǐ · jiào · shén me · míng zì?</quiz-question>
     </quiz-page>
+    <quiz-page type="match">
+        <quiz-block answer="Hello!">你好</quiz-block>
+        <quiz-block answer="How are you?">你好吗</quiz-block>
+        <quiz-block answer="What is your name?">你叫什么名字</quiz-block>
+        <quiz-block answer="I am good, thank you!">我很好谢谢</quiz-block>
+        <quiz-block answer="My name is Zi Hao.">我叫梓豪</quiz-block>
+    </quiz-page>
 </quiz-set>
 
 <a href="basics/pronouns.md" class="next">Pronouns</a>
