@@ -107,9 +107,14 @@ export class QuizPage extends QuizPart {
         switch (element.getAttribute("type")) {
             case "arrange": return QuizArrangePage.parse(element);
             case "pinyin": return QuizPinyinPage.parse(element);
+            case "match": return QuizMatchPage.parse(element);
         }
 
         throw new TypeError("An improper specialised page type was given");
+    }
+
+    get correct() {
+        return null;
     }
 
     render() {
@@ -218,6 +223,194 @@ export class QuizPinyinPage extends QuizQuestionPage {
         instance.questions = shuffle(instance.questions);
 
         return instance;
+    }
+}
+
+export class QuizMatchPage extends QuizPage {
+    constructor(directions = null) {
+        super();
+
+        this.directions = directions;
+        this.correctBlocks = [];
+        this.containerBlocks = [];
+        this.answerBlocks = [];
+    }
+
+    get correct() {
+        var finalResult = true;
+        var incomplete = false;
+
+        for (var i = 0; i < this.answerBlocks.length; i++) {
+            if (this.answerBlocks[i] == null) {
+                incomplete = true;
+
+                continue;
+            }
+
+            if (this.answerBlocks[i] != this.correctBlocks[i]) {
+                finalResult = false;
+            }
+        }
+
+        if (finalResult == false) {
+            return false;
+        }
+
+        if (incomplete) {
+            return null;
+        }
+
+        return true;
+    }
+
+    static parse(element) {
+        var instance = new this(element.getAttribute("directions") || null);
+
+        element.querySelectorAll("quiz-block").forEach(function(blockElement) {
+            var block = QuizMatchBlock.parse(blockElement);
+
+            block.parent = instance;
+
+            instance.correctBlocks.push(block);
+            instance.containerBlocks.push(block);
+            instance.answerBlocks.push(null);
+        });
+
+        instance.containerBlocks = shuffle(instance.containerBlocks);
+
+        return instance;
+    }
+
+    render() {
+        var thisScope = this;
+
+        super.render();
+
+        var directionsText = document.createElement("p");
+        var containersHolder = document.createElement("div");
+        var blocksContainer = document.createElement("div");
+        var answersContainer = document.createElement("div");
+        var resultText = document.createElement("p");
+
+        containersHolder.classList.add("quizMatchContainersHolder");
+        blocksContainer.classList.add("quizMatchBlocksContainer");
+        answersContainer.classList.add("quizMatchAnswersContainer");
+
+        this.containerBlocks.forEach(function(block, i) {
+            block.render();
+
+            block.element.addEventListener("dragstart", function(event) {
+                event.dataTransfer.setData("text", JSON.stringify({index: i, container: "blocks"}));
+            });
+
+            blocksContainer.append(block.element);
+        });
+
+        blocksContainer.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        });
+
+        blocksContainer.addEventListener("drop", function(event) {
+            event.preventDefault();
+
+            var blockData = JSON.parse(event.dataTransfer.getData("text"));
+
+            if (blockData.container != "answer") {
+                return;
+            }
+
+            if (blockData.index < 0 || blockData.index > thisScope.answerBlocks.length) {
+                return;
+            }
+
+            if (thisScope.answerBlocks[blockData.index] == null) {
+                return;
+            }
+
+            thisScope.containerBlocks.push(thisScope.answerBlocks[blockData.index]);
+            thisScope.answerBlocks[blockData.index] = null;
+
+            thisScope.root.render();
+        });
+
+        this.correctBlocks.forEach(function(block, i) {
+            var answerArea = document.createElement("div");
+            var answerText = document.createElement("div");
+            var answerDropArea = document.createElement("div");
+
+            answerArea.classList.add("quizMatchAnswerArea");
+            answerText.classList.add("quizMatchAnswerText");
+            answerDropArea.classList.add("quizMatchAnswerDropArea");
+
+            answerText.innerHTML = block.answer;
+
+            answerDropArea.addEventListener("dragover", function(event) {
+                event.preventDefault();
+            });
+
+            answerDropArea.addEventListener("drop", function(event) {
+                event.preventDefault();
+    
+                var blockData = JSON.parse(event.dataTransfer.getData("text"));
+    
+                if (blockData.container == "answer" && blockData.index == i) {
+                    return;
+                }
+
+                if (blockData.container == "blocks") {
+                    if (blockData.index < 0 || blockData.index > thisScope.containerBlocks.length) {
+                        return;
+                    }
+
+                    thisScope.answerBlocks[i] = thisScope.containerBlocks.splice(blockData.index, 1)[0];
+                } else if (blockData.container == "answer") {
+                    if (blockData.index < 0 || blockData.index > thisScope.answerBlocks.length) {
+                        return;
+                    }
+
+                    if (thisScope.answerBlocks[blockData.index] == null) {
+                        return;
+                    }
+
+                    thisScope.answerBlocks[i] = thisScope.answerBlocks[blockData.index];
+                    thisScope.answerBlocks[blockData.index] = null;
+                }
+    
+                thisScope.root.render();
+            });
+
+            var answerBlock = thisScope.answerBlocks[i];
+
+            if (answerBlock != null) {
+                answerBlock.render();
+
+                if (thisScope.correct == true) {
+                    answerBlock.element.draggable = false;
+                }
+
+                answerBlock.element.addEventListener("dragstart", function(event) {
+                    event.dataTransfer.setData("text", JSON.stringify({index: i, container: "answer"}));
+                });
+
+                answerDropArea.append(answerBlock.element);
+            }
+
+            answerArea.append(answerText, answerDropArea);
+            answersContainer.append(answerArea);
+        });
+
+        directionsText.innerHTML = this.directions || "Match up the phrases with their translation.";
+
+        if (this.correct == true) {
+            resultText.innerText = "Correct; well done!";
+        } else if (this.correct == false) {
+            resultText.innerText = "Not quite — drag the characters back into the bank and try again.";
+        } else {
+            resultText.innerText = "Read the task and then drag the characters into the matching boxes.";
+        }
+
+        containersHolder.append(blocksContainer, answersContainer);
+        this.element.append(directionsText, containersHolder, resultText);
     }
 }
 
@@ -460,8 +653,18 @@ export class QuizBlock extends QuizPart {
 
 export class QuizArrangeBlock extends QuizBlock {
     static parse(element) {
-        var instance = new this(element.innerHTML);
+        return new this(element.innerHTML);
+    }
+}
 
-        return instance;
+export class QuizMatchBlock extends QuizBlock {
+    constructor(contents, answer) {
+        super(contents);
+
+        this.answer = answer;
+    }
+
+    static parse(element) {
+        return new this(element.innerHTML, element.getAttribute("answer"));
     }
 }

@@ -18,11 +18,11 @@
         <quiz-question question="Transcribe: 你好吗？">nǐ · hǎo · ma?</quiz-question>
         <quiz-question question="Transcribe: 我很好">wǒ · hěn · hǎo</quiz-question>
     </quiz-page>
-    <!-- <quiz-page type="match">
-        <quiz-block answer="A">1</quiz-block>
-        <quiz-block answer="B">2</quiz-block>
-        <quiz-block answer="C">3</quiz-block>
-    </quiz-page> -->
+    <quiz-page type="match" directions="Match up the right boxes.">
+        <quiz-block answer="Hello">你好</quiz-block>
+        <quiz-block answer="I am good">我很好</quiz-block>
+        <quiz-block answer="How are you">你好吗？</quiz-block>
+    </quiz-page>
     <!-- <quiz-page type="draw">
         <quiz-question pinyin="wǒ">我</quiz-question>
         <quiz-question pinyin="nǐ">你</quiz-question>
