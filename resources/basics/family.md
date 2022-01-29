@@ -24,7 +24,7 @@ They're not too hard to remember — they're pretty much modelled around the fir
     </div>
     <div>
         <div class="phrase">
-            <strong>弟弟</strong> <span>younger sister</span> <span>mèi mei</span>
+            <strong>妹妹</strong> <span>younger sister</span> <span>mèi mei</span>
         </div>
         <div class="phrase">
             <strong>姐姐</strong> <span>older sister</span> <span>jiě jiě</span>
@@ -97,10 +97,9 @@ If you have no pets, then you can say:
             <quiz-block>只</quiz-block>
             <quiz-block>猫</quiz-block>
         </quiz-question>
-        <quiz-question question="你有宠物吗？" after="我没有只宠物。">
+        <quiz-question question="你有宠物吗？" after="我没有宠物。">
             <quiz-block>我</quiz-block>
             <quiz-block>没有</quiz-block>
-            <quiz-block>只</quiz-block>
             <quiz-block>宠物</quiz-block>
         </quiz-question>
     </quiz-page>
