@@ -124,3 +124,5 @@ If you have no pets, then you can say:
         <quiz-block answer="snake">蛇</quiz-block>
     </quiz-page>
 </quiz-set>
+
+<a href="basics/birthdays.md" class="next">Birthdays</a>
