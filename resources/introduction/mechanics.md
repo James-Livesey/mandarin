@@ -9,9 +9,9 @@ Mandarin is certainly different from English in both the way it sounds and the w
 Chinese characters are almost always drawn from top-left to bottom-right.
 
 ## Pinyin
-Up until the 1950s, there was no easy way to express the pronunciation of Mandarin characters in writing. Pinyin (拼音) was introduced as a way of writing Chinese characters phonetically, much like how in English, we also write can words somewhat phonetically (fuh-neh-tuh-klee).
+Up until the 1950s, there was no easy way to express the pronunciation of Mandarin characters in writing. Pinyin (拼音) was introduced as a way of writing Chinese characters phonetically; much like how in English, we also can write words somewhat phonetically (fuh-neh-tuh-klee).
 
-Pinyin was mainly invented as a means to allow the Chinese to enter Mandarin into computers. Chinese has thousands of unique characters which would never fit on a keyboard, and so they needed to find an alternative way of entering them in. After many iterations, they settled on using a QWERTY keyboard to enter pinyin. <a href="https://www.youtube.com/watch?v=hBDwXipHykQ" target="_blank">Here's a great video that I recommend if you want to learn more about the development of Chinese text entry.</a>
+Pinyin was mainly invented as a means to allow Chinese speakers to enter Mandarin into computers. Chinese has thousands of unique characters which would never fit on a keyboard, and so they needed to find an alternative way of entering them in. After many iterations, they settled on using a QWERTY keyboard to enter pinyin. <a href="https://www.youtube.com/watch?v=hBDwXipHykQ" target="_blank">Here's a great video that I recommend if you want to learn more about the development of Chinese text entry.</a>
 
 ## Tones
 Each character has a unique sound, but pronunication is important. The meaning of a spoken word can change drastically if the **tone** is different. Pinyin represents this by using accents.
