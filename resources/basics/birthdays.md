@@ -26,7 +26,7 @@ Dates are expressed as a the year number, then 年, then the month number (一 i
             <strong>十一月十四日</strong> <span>Fourteenth of November</span> <span>shí yī · yuè · shí sì · rì</span>
         </div>
         <div class="phrase">
-            <strong>2012年5月23日</strong> <span>23rd of May 2012</span> <span>èr bǎi yī èr · nián · wǔ · yuè · èr shí sān · rì</span>
+            <strong>2012年5月23日</strong> <span>23rd of May 2012</span> <span>liǎng qiān líng shí èr · nián · wǔ · yuè · èr shí sān · rì</span>
         </div>
     </div>
 </div>
